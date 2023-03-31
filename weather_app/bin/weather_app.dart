@@ -7,7 +7,6 @@ void main() {
   print('Welcome to the weather app!');
   print('Please enter a location:');
   
-  // Prompt user to enter location
   final location = getUserInput();
 
 // Get weather data from API
@@ -17,7 +16,9 @@ void main() {
       print('Sorry, unable to get weather data for $location');
       // Display weather data
     } else {
+      print('The current time in $location is $time');
       print('The current weather in $location is ${weatherData['weather']}');
+
       print('The temperature is ${weatherData['temp']} degrees Celsius');
       print('The humidity is ${weatherData['humidity']}%');
       print('The wind speed is ${weatherData['wind_speed']} km/h');
@@ -66,7 +67,7 @@ Future<Map<String, dynamic>?> getWeatherData(String location) async {
 }
 
 Future<List<Map<String, dynamic>>?> getForecastData(String location) async {
-  final apiKey = 'YOUR_API_KEY_HERE';
+  final apiKey = 'a4cf88a1c0e23be7d553698884b687de';
   final apiUrl = 'https://api.openweathermap.org/data/2.5/forecast/daily?q=$location&units=metric&cnt=5&appid=$apiKey';
   final response = await http.get(Uri.parse(apiUrl));
   if (response.statusCode == 200) {
@@ -83,3 +84,6 @@ String getUserInput() {
   final input = stdin.readLineSync();
   return input ?? '';
 }
+
+var time = DateTime.now().hour > 12 ? DateTime.now().hour - 12 : DateTime.now().hour;
+
