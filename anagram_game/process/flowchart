@@ -1,0 +1,12 @@
+```mermaid
+graph TD
+A[Display welcome message] --> B[Prompt user to enter location]
+B --> C(Get user input)
+C --> D(Get weather data from API)
+D -->|Whether data is null?| E{Yes}
+E --> F[Display error message]
+D --> G(Display weather data)
+G --> H[Prompt user to view forecast?]
+H -->|Yes| I[Display 5 day forecast]
+H -->|No| J[Display goodbye message]
+```
