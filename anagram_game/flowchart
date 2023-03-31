@@ -1,0 +1,16 @@
+```mermaid
+graph TD
+    Start[Start Game] --> A[Display welcome message and prompt for username and password];
+    A -->|If username and password are correct| B[Display game instructions and start game];
+    B --> C[Select random word];
+    C --> D[Scramble word];
+    D --> E[Display scrambled word to user];
+    E --> F[Get user input];
+    F --> |If input matches unscrambled word| G[Update score and display success message];
+    F --> |If input does not match unscrambled word| H[Display failure message];
+    G --> I{More words?};
+    H --> I{More words?};
+    I --> |Yes| C;
+    I --> |No| J[Display final score and end game];
+
+  ```
