@@ -1,0 +1,15 @@
+```mermaid
+graph TD
+A[Start] --> B{While App is running}
+B--> C{Get user input}
+C --> |1| D[Add Todo]
+D --> 
+C --> |2| E[Show Todo list]
+E -->
+C --> |3| F[Mark Todo as Done]
+F -->
+C --> |4| G[Exit]
+
+G --> H[End]
+
+```
