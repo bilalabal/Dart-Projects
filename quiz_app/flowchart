@@ -1,0 +1,18 @@
+``` mermaid
+graph TD
+A[Start] --> B[Define Question class]
+B --> C[Define Quiz class]
+C --> D[Add questions to Quiz]
+D --> E[Start Quiz]
+E --> F[Display first question]
+F --> G[Ask user for answer]
+G --> H{Check answer}
+H -- Correct --> I[Update score]
+I --> J[Display next question]
+J --> F
+H -- incorrect --> I
+J -- Last question --> K[Display user score]
+K -->L[End]
+
+
+```
